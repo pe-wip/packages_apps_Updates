@@ -135,7 +135,7 @@ public class UpdatesActivity extends UpdatesListActivity {
         check.setOnClickListener(view -> downloadUpdatesList(true));
 
         mExtrasFragment = new ExtrasFragment();
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.extras_view, mExtrasFragment)
                 .commit();
     }
@@ -207,7 +207,7 @@ public class UpdatesActivity extends UpdatesListActivity {
 
     private void loadUpdatesList(File jsonFile, boolean manualRefresh)
             throws IOException, JSONException {
-        mExtrasFragment.updatePrefs(Utils.parseJson(jsonFile, false));
+        //mExtrasFragment.updatePrefs(Utils.parseJson(jsonFile, false));
         Log.d(TAG, "Adding remote updates");
         UpdaterController controller = mUpdaterService.getUpdaterController();
 

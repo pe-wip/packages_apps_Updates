@@ -30,8 +30,8 @@
     </style>
 
     <style name="ToolbarTitle" parent="android:TextAppearance.Material.Title">
-        <item name="android:fontFamily">@*android:string/config_headlineFontFamilyMedium</item>
-        <item name="android:textColor">#0fff</item>
+        <item name="android:fontFamily">@string/defaultFontFamilyMedium</item>
+        <item name="android:textColor">@color/theme_accent</item>
     </style>
     <style name="AppTheme.AlertDialogStyle" parent="Theme.MaterialComponents.Light.Dialog.Alert">
         <item name="colorAccent">@color/theme_accent</item>
@@ -62,7 +62,7 @@
     </style>
     <style name="TextAppearancePreference">
         <item name="android:textSize">@*android:dimen/text_size_subhead_material</item>
-        <item name="android:fontFamily">@*android:string/config_headlineFontFamily</item>
+        <item name="android:fontFamily">@string/defaultFontFamily</item>
         <item name="android:textColor">@color/text_primary</item>
     </style>
 
@@ -80,6 +80,7 @@
         <item name="android:textAllCaps">false</item>
         <item name="android:paddingLeft">15dp</item>
         <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
     </style>
 
 </resources>

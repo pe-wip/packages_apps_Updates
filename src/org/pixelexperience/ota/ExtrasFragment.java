@@ -5,15 +5,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
-import android.preference.PreferenceFragment;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
+
+import androidx.fragment.app.Fragment;
 
 import org.pixelexperience.ota.model.UpdateInfo;
 
 import com.google.android.material.snackbar.Snackbar;
 
-public class ExtrasFragment extends PreferenceFragment implements Preference.OnPreferenceClickListener {
+public class ExtrasFragment extends Fragment {
 
     private static final String EXTRAS_CATEGORY = "extras_category";
     private static final String MAINTAINER_INFO = "maintainer_info";
@@ -34,23 +38,22 @@ public class ExtrasFragment extends PreferenceFragment implements Preference.OnP
     private Preference mDonateInfo;
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.extras_fragment, container, false);
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.extras_prefs);
-        mExtrasCategory = (PreferenceCategory) findPreference(EXTRAS_CATEGORY);
-        mMaintainerInfo = findPreference(MAINTAINER_INFO);
-        mForumInfo = findPreference(FORUM_INFO);
-        mWebsiteInfo = findPreference(WEBSITE_INFO);
-        mNewsInfo = findPreference(NEWS_INFO);
-        mDonateInfo = findPreference(DONATE_INFO);
+        /*
         mMaintainerInfo.setOnPreferenceClickListener(this);
         mForumInfo.setOnPreferenceClickListener(this);
         mWebsiteInfo.setOnPreferenceClickListener(this);
         mNewsInfo.setOnPreferenceClickListener(this);
-        mDonateInfo.setOnPreferenceClickListener(this);
-        getPreferenceScreen().removeAll();
+        mDonateInfo.setOnPreferenceClickListener(this);*/
     }
-
+/*
     public void updatePrefs(UpdateInfo update) {
         Log.d("ExtrasFragment:updatePrefs", "called");
         if (update == null) {
@@ -167,5 +170,5 @@ public class ExtrasFragment extends PreferenceFragment implements Preference.OnP
         super.onActivityCreated(savedInstanceState);
         ListView list = getView().findViewById(android.R.id.list);
         list.setDivider(null);
-    }
+    }*/
 }
